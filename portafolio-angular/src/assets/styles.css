@@ -1,0 +1,213 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*Cargamos nuestra fuentes tipográficas*/
+
+@font-face {
+  font-family: "yanone";
+  src: url("fonts/yanone.ttf");
+}
+
+@font-face {
+  font-family: "finger";
+  src: url("fonts/finger.ttf");
+}
+
+@font-face {
+  font-family: "titilium";
+  src: url("fonts/titilium.ttf");
+}
+@font-face {
+  font-family: "steronite";
+  src: url("fonts/Steronite.ttf");
+}
+
+
+/*Estilos Generales:*/
+
+/* Estilos que se aplican a todos los elementos de la web:*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "yanone", Arial, Helvetica;
+  font-size: 20px;
+  background: url("img/pattern.png");
+  background-attachment: fixed;/*Para que el fondo se quede fijo*/
+}
+
+.clearfix{ /*Para limpiar lo flotado entre los diferentes elementos*/
+  float: none;
+  clear: both;
+}
+
+/*Barra de navegación - header*/
+
+header{
+  display: block;
+  width: 100%;
+  height: 90px;
+  background: rgba(141, 141, 141, 0.38);
+  position: fixed;/*cuando hago scroll la barra de navegación se queda siempre arriba*/
+  text-transform: uppercase;/*para que todo el texto sea en mayúscula*/
+}
+
+header ul{
+  display: block;
+  width: 90%;
+  height: inherit; /*heredado del padre*/
+  margin: 0px auto;
+  text-align: center;
+  margin-top: -13px;/*para que no se salga por abajo mi margen negro cuando hace hover*/
+
+}
+
+header ul li{
+  display: inline-block;/*para que se pongan los elementos uno al lado del otro*/
+  margin: 0px auto;
+  text-align: center;
+  line-height: 100px;
+  font-size: 25px;
+}
+
+header a{
+  display: block;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: inherit;
+  text-decoration: none;
+  color: #484545;
+  transition: all 300ms;/*para luego crear una animación con hover*/
+}
+
+/*Creamos una animación con hover*/
+
+header a:hover,
+.activated{ /*Creamos la clase activated para que cuando pulsemos un elemento de nuestra lista se quede marcado*/
+  background: rgba(79, 79, 79, 0.54);
+  color: white;
+  font-weight: lighter;
+  text-shadow: 1px 1px 4px #000000;
+}
+/* Quitamos el el efecto hover del logo - finalmente comentamos este código porque luego hago otro efecto hover diferente lara el logo*/
+/*
+header #logo a:hover{
+  background: transparent;
+  color: #484545;
+}
+*/
+
+/* Estilos del logotipo */
+
+#logo{
+  font-family: steronite;
+  font-size: 30px;
+  font-weight: normal;
+  text-transform: none;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#logo div{
+  position: relative;
+  top: 20px;
+  height: 70px;
+  width: 75px;
+  background-color: #b0b0b0;
+  border-radius: 250px;
+  border: 2px solid #f5f105;
+  box-shadow: 2px 2px 2px #817e7e;
+}
+
+#logo div p{
+  position: relative;
+  top: -15px;
+}
+
+#logo a{ /* hago una serie de transformaciones que solo afectan al logo cuando hago hover*/
+  transition: color 500ms, transform 500ms;
+  color: #f5f105;
+  text-shadow: 2px 2px 2px #817e7e;
+}
+
+#logo a:hover{
+  background: transparent;
+  color: #f7ff00;
+  transform: scale(1.50,1.50);/*aumenta el tamaño del logo*/
+  font-weight: normal;
+}
+
+/* Maquetando el contenedor principal*/
+
+#content{
+  min-height: 700px;
+  width: 80%;
+  margin: 0px auto;
+  box-shadow: 0px 0px 40px black;
+  background: rgba(255, 255, 255, 0.7);
+  padding-top: 120px;
+  padding-bottom: 20px;
+  border-left: 1px solid #b7b7b7;
+  border-right: 1px solid #b7b7b7;
+
+
+}
+
+/* Pie de página */
+
+footer {
+  width: 75%;
+  padding-top: 15px;
+  font-family: steronite;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5)
+}
+
+/*Sobre mí*/
+
+#title {
+  width: 70%;
+  margin: 0px auto;
+  text-align: center;
+  margin-bottom: 70px;
+  margin-top: 20px;
+}
+
+#title h1 {
+  font-family: steronite;
+  font-size: 40px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+
+}
+#title h2 {
+  font-size: 25px;
+  color: gray;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+article.about {
+  width: 70%;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  font-size: 23px;
+}
+
+.about h2{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.about p{
+  color: gray;
+  text-align: justify;
+
+
+}
