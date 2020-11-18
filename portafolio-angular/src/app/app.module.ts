@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms"; //para usar formularios con two-way data bindingnpm
 import { routing, appRoutingProviders} from "./app.routing"; //importo el archivo de rutas que he creado manualmente y los añado dentro de @NgModule imports y providers:
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +24,9 @@ import { ErrorComponent } from './components/error/error.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    routing
+    routing,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     appRoutingProviders

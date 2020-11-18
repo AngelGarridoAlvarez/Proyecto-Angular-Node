@@ -208,6 +208,93 @@ article.about {
 .about p{
   color: gray;
   text-align: justify;
+}
 
+/* Sección con formularios - create.component*/
 
+.container {
+  padding: 50px;
+  padding: 10px;
+}
+
+.container h2{
+  display: block;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+form{
+  width: 80%;
+}
+
+form label{
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea {
+  width: 40%;
+  padding: 5px;
+}
+form button,
+form input[type="submit"]{
+  display: block;
+  font-size: 17px;
+  padding: 5px;
+  margin-top: 10px;
+  color: #dad55e;
+  background-color: gray;
+  border: 1px solid #b0b0b0;
+  cursor: pointer;
+}
+
+form button:hover,
+form input[type="submit"]:hover{
+  color: gray;
+  background-color: #dad55e;
+  border: 1px solid  #b0b0b0;
+}
+
+form input[disabled]{
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.formError {
+  font-size: 15px;
+  color: #f5f105;
+  text-shadow: 2px 2px 2px #817e7e;
+  background-color: #b0b0b0;
+  border: 2px solid #f5f105;
+  box-shadow: 2px 2px 2px #817e7e;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.message{
+  font-size: 15px;
+  border: 1px solid #f5f105;
+  box-shadow: 2px 2px 2px #817e7e;
+  padding: 5px;
+  width: 50%;
+}
+
+.success{
+  background-color: #25ac46;
+  color: white;
+}
+
+.success a{
+  color: white;
+}
+
+.failed{
+  background-color: #ff6060;
+  color: white;
 }

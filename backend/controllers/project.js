@@ -30,8 +30,9 @@ let controller = {
         project.description = params.description;
         project.category = params.category;
         project.year = params.year;
-        project.langs = params.langs;
+        project.languages = params.languages;
         project.image = null; //luego añadiremos la lógica de la imagen
+        project.link = params.link;
 
         project.save((err, projectStored) => {
             if (err) return res.status(500).send({message: 'Error al guardar el documento.'});

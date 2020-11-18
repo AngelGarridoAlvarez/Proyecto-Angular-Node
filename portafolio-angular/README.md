@@ -54,3 +54,26 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 **src/assets/img**
 * Creo estar carpeta para meter las imágenes de proyecto
 
+**Hacer funcionar el backend**
+* Instalar mongo en nuestro pc local y ejecutar mongod.exe
+* Dentro de la carpeta backend: npm start
+
+
+**src/app/models**
+* Creo esta carpeta para meter mis modelos
+* Creamos nuestro modelo que representa a un objeto/documento de nuestra base de datos
+* Un modelo va a ser una entidad, en nuestro caso, la entidad proyecto. **src/app/models/project.ts**
+
+**src/app/services** - creo esta carpeta para meter mis servicios
+* **src/app/services/global.ts**
+    * creo un archivo de configuración global que voy a reutilizar en varios archivos
+    * voy a utilizar la variable global que va a contener la url del api y poder reutilizarla en varios sitios
+* **src/app/services/project.service.ts**
+    * Creo el servicio
+    
+**src/app/app.module.ts**
+* Importamos y cargamos en nuestro decorador:
+    * import { HttpClientModule} from "@angular/common/http";
+    * import {FormsModule} from "@angular/forms"; //para usar formularios con two-way data bindingnpm
+
+**src/app/components/create.component.ts**

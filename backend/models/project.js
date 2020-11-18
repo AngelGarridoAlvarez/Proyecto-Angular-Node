@@ -13,10 +13,10 @@ var ProjectSchema = Schema({
     description: String,
     category: String,
     year: Number,
-    //langs: [String], //Así es como digo que va a ser un array de strings
-    langs: String, //Quitamos el array de string para simplificar el proceso
-    image: String
-
+    //languages: [String], //Así es como digo que va a ser un array de strings
+    languages: String, //Quitamos el array de string para simplificar el proceso
+    image: String,
+    link: String
 });
 
 //Exporto el modelo para poder utilizarlo en otros ficheros:
