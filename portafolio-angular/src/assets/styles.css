@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 /*Cargamos nuestra fuentes tipográficas*/
 
 @font-face {
@@ -48,20 +49,37 @@ body {
 header{
   display: block;
   width: 100%;
-  height: 90px;
-  background: rgba(141, 141, 141, 0.38);
+  height: fit-content;
   position: fixed;/*cuando hago scroll la barra de navegación se queda siempre arriba*/
   text-transform: uppercase;/*para que todo el texto sea en mayúscula*/
+  background: url("img/pattern.png");
+;
+}
+
+#headerDiv1{
+  width: 100%;
+  height: 85px;
+  overflow: hidden;
+}
+
+#headerDiv2{
+  width: 100%;
+  height: 200px;
+  background-color: rgba(74, 74, 74, 0.3);
+  width: 80%;
+  margin: 0px auto;
+  border-left: 1px solid #b7b7b7;
+  border-right: 1px solid #b7b7b7;
+  box-shadow: 0px 0px 40px black;
 }
 
 header ul{
   display: block;
   width: 90%;
   height: inherit; /*heredado del padre*/
-  margin: 0px auto;
   text-align: center;
-  margin-top: -13px;/*para que no se salga por abajo mi margen negro cuando hace hover*/
-
+  /*para que no se salga por abajo mi margen negro cuando hace hover*/
+  margin: -13px auto 0px;
 }
 
 header ul li{
@@ -69,7 +87,7 @@ header ul li{
   margin: 0px auto;
   text-align: center;
   line-height: 100px;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 header a{
@@ -112,45 +130,53 @@ header #logo a:hover{
 
 #logo div{
   position: relative;
-  top: 20px;
+  top: 16px;
   height: 70px;
   width: 75px;
-  background-color: #b0b0b0;
   border-radius: 250px;
-  border: 2px solid #f5f105;
+  background-color: #989898;
+  border: 2px solid #f7ff00;
   box-shadow: 2px 2px 2px #817e7e;
 }
 
-#logo div p{
+#logo div p{ /*la posición de las letras del logo*/
   position: relative;
-  top: -15px;
+  top: -17px;
 }
 
 #logo a{ /* hago una serie de transformaciones que solo afectan al logo cuando hago hover*/
   transition: color 500ms, transform 500ms;
-  color: #f5f105;
-  text-shadow: 2px 2px 2px #817e7e;
+  color: #f7ff00;
+  font-weight: normal;
+  text-shadow: none;
 }
 
 #logo a:hover{
   background: transparent;
-  color: #f7ff00;
-  transform: scale(1.50,1.50);/*aumenta el tamaño del logo*/
+  transform: scale(1.13,1.13);/*aumenta el tamaño del logo*/
   font-weight: normal;
+  color: #646464;
+}
+
+#logo div:hover{
+  background-color: #f5f105;
+  border: 2px solid #646464;
 }
 
 /* Maquetando el contenedor principal*/
 
 #content{
-  min-height: 700px;
+  min-height: 1000px;
+  height: auto;
   width: 80%;
   margin: 0px auto;
   box-shadow: 0px 0px 40px black;
   background: rgba(255, 255, 255, 0.7);
   padding-top: 120px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   border-left: 1px solid #b7b7b7;
   border-right: 1px solid #b7b7b7;
+  overflow: auto;
 
 
 }
@@ -159,7 +185,7 @@ header #logo a:hover{
 
 footer {
   width: 75%;
-  padding-top: 15px;
+  padding-top: 20px;
   font-family: steronite;
   margin: 0px auto;
   text-align: center;
@@ -214,7 +240,6 @@ article.about {
 
 .container {
   padding: 50px;
-  padding: 10px;
 }
 
 .container h2{
@@ -297,4 +322,47 @@ form input[disabled]{
 .failed{
   background-color: #ff6060;
   color: white;
+}
+
+.container ul {
+  text-align: center;
+}
+
+.project {
+  list-style: none;
+  display: inline-block;
+  float: none;
+  width: 220px;
+  height: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: #b0b0b0 dotted 2px ;
+  background-color: #f1f1f1;
+}
+
+.container ul :hover {
+  background-color: #faffd9;
+}
+
+.project .image {
+  display:table-cell;
+  height: 190px;
+  width: 220px;
+  vertical-align:middle;
+  text-align:center
+}
+
+.project img{
+  margin: auto;
+  max-height: 170px;
+  max-width: 170px;
+  align-content: center;
+}
+
+.project a{
+  text-decoration: none;
+  color: black;
 }
