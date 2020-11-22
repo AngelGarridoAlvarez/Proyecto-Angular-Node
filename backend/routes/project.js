@@ -20,6 +20,5 @@ router.get('/projects', ProjectController.getProjects);//Probamos http://localho
 router.put('/project/:id', ProjectController.updateProject); //al no poner ? en la ruta el parámetro project/:id es obligatorio
 router.delete('/project/:id', ProjectController.deleteProject);//Ruta para borrar proyectos
 router.post('/upload-image/:id', multipartMiddleware, ProjectController.uploadImage);//Ruta para subir imágenes - hemos tenido que instalar previamente connect-multiparty
-
-
+router.get('/get-image/:image', ProjectController.getImageFile);
 module.exports = router; //exporto router para poder utilizar mi configuración de rutas fuera de aquí

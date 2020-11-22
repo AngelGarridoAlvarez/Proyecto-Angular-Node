@@ -6,6 +6,7 @@
 
 let Project = require('../models/project'); //Importo el modelo project para poder instanciarlo en el método saveProject()
 let fs = require('fs'); //librería de node que voy a utilizar para borrar archivos
+let path = require('path'); //Modulo de nodeJS que nos permite cargar rutas físicas de nuestro sistema de archivos
 
 let controller = {
 
@@ -160,6 +161,22 @@ let controller = {
             });
         };
     },
+
+    getImageFile: function (req, res){
+        let file = req.params.image;
+        let path_file = './uploads/' + file;
+
+        fs.stat(path_file, (error) => {
+            if(!error){
+                return res.sendFile(path.resolve(path_file))
+            }else{
+                return res.status(200).send({
+                    message: "No existe la imagen..."
+                });
+            }
+        });
+    }
+
 
 };
 
