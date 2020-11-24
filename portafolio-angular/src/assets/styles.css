@@ -166,7 +166,6 @@ header #logo a:hover{
 /* Maquetando el contenedor principal*/
 
 #content{
-  min-height: 1000px;
   height: auto;
   width: 80%;
   margin: 0px auto;
@@ -186,6 +185,7 @@ header #logo a:hover{
 footer {
   width: 75%;
   padding-top: 20px;
+  padding-bottom: 10px;
   font-family: steronite;
   margin: 0px auto;
   text-align: center;
@@ -365,4 +365,13 @@ form input[disabled]{
 .project a{
   text-decoration: none;
   color: black;
+}
+
+#pImagenDetalle{
+  text-align: center;
+  padding: 20px;
+}
+#imagenDetalle{
+  max-width: 95%;
+  max-height: 300px;
 }
