@@ -180,4 +180,4 @@ let controller = {
 
 };
 
-module.exports = controller; //ahora con require me puedo importar mi controlador en otros archivos
+module.exports = controller; //ahora usando 'require' me puedo importar mi controlador en otros archivos

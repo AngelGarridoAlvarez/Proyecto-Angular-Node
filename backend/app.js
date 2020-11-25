@@ -1,14 +1,14 @@
 //En este archivo vamos a configurar Express
 'use strict'
 
-var express = require('express');//accede a la carpeta correspondiente de node_modules para usar esta librería
-var bodyParser = require('body-parser');
-var index = require("./index"); //Me importo index para poder usar directamente la variable puerto posteriormente
+const express = require('express');//accede a la carpeta correspondiente de node_modules para usar esta librería
+const bodyParser = require('body-parser');//middleware para manejar peticiones tipo post en express
+const index = require("./index"); //Me importo index para poder usar directamente la variable puerto posteriormente
 
-var app = express();
+const app = express();
 
 //Cargar Archivos de Rutas - aquí vamos a importar archivos de rutas para poder utilizarlos en el apartado inferior RUTAS
-var project_routes = require('./routes/project'); //me traigo el objeto donde tengo mis rutas a project_routes y puedo utilizarlo
+const project_routes = require('./routes/project'); //me traigo el objeto donde tengo mis rutas a project_routes y puedo utilizarlo
 
 //Middlewares:
 // * métodos que se ejecutan antes de ejecutar la acción de un controlador/ el resultado de la petición
@@ -38,9 +38,17 @@ app.get('/test', (req,res) => {
     //si recibo una res estatus 200 (exitosa) envío el mensaje
 });
 
+//Creo la ruta contact en la que cargo mi contact.html de node
+app.get('/contact', (req,res) => {
+    res.status(200).sendFile(__dirname + '/public/contact.html');
+    //si recibo una res estatus 200 (exitosa) envío el mensaje
+});
+
+
 app.get('/', (req,res) => {
     res.status(200).send("<h1>Pagina de inicio, prueba las siguientes rutas:</h1>" +
         "<ul>" +
+        "<li>localhost:"+ index.puerto + "/contact - cargar mi formulario de contacto local de node</li>" +
         "<li>localhost:"+ index.puerto + "/test</li>" +
         "<li>localhost:"+ index.puerto + "/api</li>" +
         "<li>localhost:"+ index.puerto + "/rutaPost - (post)</li>" +
