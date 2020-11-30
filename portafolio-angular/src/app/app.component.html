@@ -3,13 +3,14 @@
   <div id='headerDiv1'>
     <div id='headerDiv2'>
     <ul>
-      <li><a [routerLink]="['sobre-mi']" [routerLinkActive]="['activated']">sobre mí</a></li>
+      <!-- <li><a [routerLink]="['sobre-mi']" [routerLinkActive]="['activated']">sobre mí</a></li> -->
       <!-- uso routerLinkActive para dejar marcados los elementos de mi menú cuando los selecciono-->
-      <li><a [routerLink]="['proyectos']" [routerLinkActive]="['activated']">proyectos</a></li>
-      <li id="logo"><a href="#">
+      <li><a [routerLink]="['proyectos']" [routerLinkActive]="['activated']">Portafolio</a></li>
+
+      <li id="logo"><a [routerLink]="['sobre-mi']">
         <div><p>ÁGÁ</p></div>
       </a></li>
-      <li><a [routerLink]="['crear-proyecto']" [routerLinkActive]="['activated']">crear proyecto</a></li>
+      <!--<li><a [routerLink]="['crear-proyecto']" [routerLinkActive]="['activated']">crear proyecto</a></li>-->
       <li><a [routerLink]="['contacto']" [routerLinkActive]="['activated']">contacto</a></li>
     </ul>
   </div>
@@ -24,5 +25,5 @@
 </section>
 
 <footer>
-  Ángel Garrido Álvarez - Web Fullstack Developer
+  WWW.Angel Developer.ES
 </footer>

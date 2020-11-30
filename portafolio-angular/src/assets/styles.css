@@ -22,6 +22,10 @@
   src: url("fonts/Steronite.ttf");
 }
 
+.Steronite {
+  font-family: Steronite;
+  color: #737373;
+}
 
 /*Estilos Generales:*/
 
@@ -32,8 +36,9 @@
   padding: 0px;
 }
 
+
 body {
-  font-family: "yanone", Arial, Helvetica;
+  font-family: "titilium", Arial, Helvetica;
   font-size: 20px;
   background: url("img/pattern.png");
   background-attachment: fixed;/*Para que el fondo se quede fijo*/
@@ -47,6 +52,7 @@ body {
 /*Barra de navegación - header*/
 
 header{
+  font-size: 10px;
   display: block;
   width: 100%;
   height: fit-content;
@@ -63,7 +69,6 @@ header{
 }
 
 #headerDiv2{
-  width: 100%;
   height: 200px;
   background-color: rgba(74, 74, 74, 0.3);
   width: 80%;
@@ -75,7 +80,7 @@ header{
 
 header ul{
   display: block;
-  width: 90%;
+  width: 100%;
   height: inherit; /*heredado del padre*/
   text-align: center;
   /*para que no se salga por abajo mi margen negro cuando hace hover*/
@@ -83,17 +88,16 @@ header ul{
 }
 
 header ul li{
+  font-family: steronite;
   display: inline-block;/*para que se pongan los elementos uno al lado del otro*/
   margin: 0px auto;
   text-align: center;
   line-height: 100px;
-  font-size: 30px;
+  font-size: 19px;
 }
 
 header a{
   display: block;
-  padding-right: 10px;
-  padding-left: 10px;
   height: inherit;
   text-decoration: none;
   color: #484545;
@@ -135,7 +139,7 @@ header #logo a:hover{
   width: 75px;
   border-radius: 250px;
   background-color: #989898;
-  border: 2px solid #f7ff00;
+  border: 2px solid #ffdf00;
   box-shadow: 2px 2px 2px #817e7e;
 }
 
@@ -146,28 +150,108 @@ header #logo a:hover{
 
 #logo a{ /* hago una serie de transformaciones que solo afectan al logo cuando hago hover*/
   transition: color 500ms, transform 500ms;
-  color: #f7ff00;
+  color: #ffdf00;
   font-weight: normal;
   text-shadow: none;
 }
 
 #logo a:hover{
   background: transparent;
-  transform: scale(1.13,1.13);/*aumenta el tamaño del logo*/
+  transform: scale(1.1,1.1);/*aumenta el tamaño del logo*/
   font-weight: normal;
   color: #646464;
 }
 
 #logo div:hover{
-  background-color: #f5f105;
+  background-color: #ffdf00;
   border: 2px solid #646464;
 }
 
 /* Maquetando el contenedor principal*/
 
+/* pantallas inferiores a 600px*/
+
+@media only screen and (max-width: 420px) {
+  #headerDiv2{
+    width: 100%;
+  }
+
+  header ul li{
+    font-size: 14px;
+  }
+
+  header a{
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  #content{
+    width: 100%;
+  }
+  /* Pie de página */
+
+  footer {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width:420px) and (max-width: 700px) {
+  #headerDiv2{
+    width: 100%;
+  }
+
+  header ul li{
+    font-size: 20px;
+  }
+
+
+  header a{
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  #content{
+    width: 100%;
+  }
+  /* Pie de página */
+
+  footer {
+    width: 100%;
+  }
+
+}
+/* pantallas superiores a 600px*/
+@media only screen and (min-width: 700px) {
+
+  #headerDiv2{
+    width: 80%;
+  }
+
+  header ul li{
+    font-size: 25px;
+  }
+
+
+  header a{
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  #content{
+    width: 80%;
+  }
+  /* Pie de página */
+
+  footer {
+  width: 80%;
+  }
+
+
+
+}
+
 #content{
   height: auto;
-  width: 80%;
   margin: 0px auto;
   box-shadow: 0px 0px 40px black;
   background: rgba(255, 255, 255, 0.7);
@@ -176,14 +260,10 @@ header #logo a:hover{
   border-left: 1px solid #b7b7b7;
   border-right: 1px solid #b7b7b7;
   overflow: auto;
-
-
 }
-
 /* Pie de página */
 
 footer {
-  width: 75%;
   padding-top: 20px;
   padding-bottom: 10px;
   font-family: steronite;
@@ -193,8 +273,13 @@ footer {
   color: rgba(0, 0, 0, 0.5)
 }
 
+
 /*Sobre mí*/
 
+#adLogo{
+  max-width: 80%;
+}
+/*
 #title {
   width: 70%;
   margin: 0px auto;
@@ -202,19 +287,20 @@ footer {
   margin-bottom: 70px;
   margin-top: 20px;
 }
+*/
+
 
 #title h1 {
   font-family: steronite;
-  font-size: 40px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
-
+  font-size: 27px;
 }
-#title h2 {
-  font-size: 25px;
-  color: gray;
+#title h3 {
+  color: #b0acac;
   margin-top: 5px;
   margin-bottom: 5px;
+  font-size: 20px;
 }
 
 
@@ -236,6 +322,14 @@ article.about {
   text-align: justify;
 }
 
+.icon{
+  max-width: 40px;
+  height: auto;
+  padding-top: 20px;
+  padding-right: 10px;
+
+}
+
 /* Sección con formularios - create.component*/
 
 .container {
@@ -250,7 +344,7 @@ article.about {
 }
 
 form{
-  width: 80%;
+  width: 100%;
 }
 
 form label{
@@ -267,6 +361,12 @@ form textarea {
   width: 40%;
   padding: 5px;
 }
+
+#comentarios {
+  width: 75%;
+  height: 200px;
+}
+
 form button,
 form input[type="submit"]{
   display: block;
